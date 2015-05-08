@@ -11,6 +11,8 @@ ruby '2.2.0'
  group :development do
    gem 'sqlite3'
  end
+ # Use Faker Gem to create lots of fake entries
+ gem 'faker'
 # Use Twitter Bootstrap CSS framework
 gem 'bootstrap-sass'
 # Use SCSS for stylesheets
