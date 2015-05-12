@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
+
 ruby '2.2.0'
+
  group :production do
    gem 'pg'
    gem 'rails_12factor'
@@ -11,8 +13,10 @@ ruby '2.2.0'
  group :development do
    gem 'sqlite3'
  end
- # Use Faker Gem to create lots of fake entries
- gem 'faker'
+
+gem 'devise'
+# Use Faker Gem to create lots of fake entries
+gem 'faker'
 # Use Twitter Bootstrap CSS framework
 gem 'bootstrap-sass'
 # Use SCSS for stylesheets
