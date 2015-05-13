@@ -8,21 +8,22 @@
 
 require 'faker'
 
-#Create Posts |
-50.times do 
-   Advertisement.create!(
-     title: Faker::Lorem.sentence,
-     copy:  Faker::Lorem.paragraph,
-     price: Faker::Commerce.price
-   )
- end
+#Create Unique Posts |
 
- ads = Advertisement.all 
+10.times do
+
+Post.find_or_create_by!(
+  title: "Test Title",
+  body: "Test body",
+)
+
+posts = Post.all 
 
 
 puts "Seed finished"
-puts "#{Advertisement.count} ads created"
 
+
+end
 #Create Posts |
 # 50.times do 
 #   Post.create!(
