@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
   def index
     @questions = Question.all
+    @question = Question.new
   end
 
   def show
@@ -26,6 +27,7 @@ class QuestionsController < ApplicationController
   end
 
   def update
+    
     @question = Question.find(params[:id])
     if @question.update_attributes(params.require(:question).permit(:title, :body, :resolved))
       flash[:notice] = "Question was updated."
@@ -38,15 +40,11 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
-    if @question.update_attributes(params.require(:question).permit(:title, :body, :resolved))
+    if @question.destroy
       flash[:notice] = "Question was deleted."
-      @question = Question.all
-      redirect_to @question
     else
       flash[:error] = "There was an error deleting your question. Please try again."
       render :edit
     end
-
-
   end
 end

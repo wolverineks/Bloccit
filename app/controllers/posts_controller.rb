@@ -36,5 +36,14 @@ class PostsController < ApplicationController
       render :edit
     end
   end
-
+  
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      flash[:notice] = "Post was deleted."
+    else
+      flash[:error] = "There was an error deleting your post. Please try again."
+      render :edit
+    end
+  end
 end
