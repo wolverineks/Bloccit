@@ -38,10 +38,9 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question = Question.find(params[:id])
-    if @question.update_attributes(params.require(:question).permit(:title, :body, :resolved))
+    if @question.destroy
       flash[:notice] = "Question was deleted."
-      @question = Question.all
-      redirect_to @question
+      redirect_to questions_path
     else
       flash[:error] = "There was an error deleting your question. Please try again."
       render :edit
