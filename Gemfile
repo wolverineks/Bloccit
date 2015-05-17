@@ -14,6 +14,7 @@ ruby '2.2.0'
    gem 'sqlite3'
  end
 
+gem 'figaro'
 gem 'devise'
 # Use Faker Gem to create lots of fake entries
 gem 'faker'
