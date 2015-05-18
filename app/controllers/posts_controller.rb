@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :body))
+    @post = current_user.posts.build(params.require(:post).permit(:title, :body))
     if @post.save
       flash[:notice] = "Post was saved."
       redirect_to @post
@@ -40,15 +40,5 @@ class PostsController < ApplicationController
       render :edit
     end
   end
-
-
-
-  before_action :flash_attack
-    protected
-    def flash_attack
-      flash[:notice] = "There is a flash flood warning in your area."
-    end
-
-  skip_before_action :flash_attack, only: [:new, :index]
 
 end
