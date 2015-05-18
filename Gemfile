@@ -14,7 +14,11 @@ ruby '2.2.0'
    gem 'sqlite3'
  end
 
+# Use Pundit Gem to check authorization for user priviledges
+gem 'pundit'
+# Use Figaro Gem to send emails to users for registration
 gem 'figaro'
+# User Devise Gem to authenticate users
 gem 'devise'
 # Use Faker Gem to create lots of fake entries
 gem 'faker'
