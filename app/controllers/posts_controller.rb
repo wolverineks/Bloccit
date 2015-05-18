@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+
+
+
+
   def index
     @posts = Post.all
   end
@@ -36,5 +40,15 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+
+
+
+  before_action :flash_attack
+    protected
+    def flash_attack
+      flash[:notice] = "There is a flash flood warning in your area."
+    end
+
+  skip_before_action :flash_attack, only: [:new, :index]
 
 end
