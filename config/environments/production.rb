@@ -76,4 +76,11 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # https://bloc-staticpage.herokuapp.com/users
+  config.action_mailer.default_url_options = { host: 'https://bloc-staticpage.herokuapp.com/users' }
+
+  # Force SSL in heroku
+  config.force_ssl = true
+
 end
