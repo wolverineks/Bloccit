@@ -1,20 +1,21 @@
 Rails.application.routes.draw do
+
+  # resources will create these routes automatically
+  # get  '/index'
+  # get  '/show'
+  # get  '/new'
+  # post '/create'
+  # get  '/edit'
+  # put  '/update'
+  # post '/destroy'
+
   devise_for :users
-  # get 'questions/index'
 
-  # get 'questions/show'
+  resources :questions
 
-  # get 'questions/new'
-
-  # get 'questions/create'
-
-  # get 'questions/edit'
-
-  # get 'questions/update'
-
-  # get 'questions/destroy'
-
-  resources :posts, :questions
+  resources :topics do
+    resources :posts, except: [:index]
+  end
 
   get 'about' => 'welcome#about'
 
