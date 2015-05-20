@@ -9,7 +9,7 @@
   <div class="media">
     <div class="media-body">
       <h4 class="media-heading">
-        <p><%= link_to post.title, post %></p>
+        <p><%= link_to post.markdown_title, post %></p>
       </h4>
         <small>
           submitted <%= time_ago_in_words(post.created_at) %> ago by user <%= post.user.name %><br>
