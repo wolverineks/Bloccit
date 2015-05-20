@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'users/update'
+
   # resources will create these routes automatically
   # get  '/index'
   # get  '/show'
@@ -12,6 +14,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :questions
+
+  resources :users, only: [:update]
 
   resources :topics do
     resources :posts, except: [:index]
