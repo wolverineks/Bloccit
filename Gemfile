@@ -14,6 +14,8 @@ ruby '2.2.0'
    gem 'sqlite3'
  end
 
+# Use Redcarpet Gem for markdown
+gem 'redcarpet'
 # Use Pundit Gem to check authorization for user priviledges
 gem 'pundit'
 # Use Figaro Gem to send emails to users for registration
