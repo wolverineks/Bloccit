@@ -1,19 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'questions/index'
-
-  get 'questions/show'
-
-  get 'questions/new'
-
-  get 'questions/create'
-
-  get 'questions/edit'
-
-  get 'questions/update'
-
-  get 'questions/destroy'
-
   # resources will create these routes automatically
   # get  '/index'
   # get  '/show'
@@ -24,6 +10,8 @@ Rails.application.routes.draw do
   # post '/destroy'
 
   devise_for :users
+
+  resources :users, only: [:update]
 
   resources :questions
 
