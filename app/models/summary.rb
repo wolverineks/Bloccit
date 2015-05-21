@@ -1,3 +1,3 @@
 class Summary < ActiveRecord::Base
-  has many :posts
+  belongs_to :post
 end
