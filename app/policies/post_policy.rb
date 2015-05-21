@@ -8,15 +8,15 @@ class PostPolicy < ApplicationPolicy
     end
 
     def resolve
+      # handle the guests
+      return scope.none if user.nil?
+      
       if user.admin?
         scope.all
-      else
-        scope.where(:published => true)
+      else 
+        scope.where(user:user)
       end
     end
   end
 
-  def update?
-    user.admin? or not post.published?
-  end
 end
