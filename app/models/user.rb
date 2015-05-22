@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   validates :role, presence:true
 
+  mount_uploader :avatar, AvatarUploader
+
 def admin?
   role == 'admin'
 end
@@ -14,7 +16,5 @@ end
 def moderator?
   role == 'moderator'
 end
-
-
 
 end

@@ -14,6 +14,12 @@ ruby '2.2.0'
    gem 'sqlite3'
  end
 
+# Use Fog Gem for markdown
+gem 'fog'
+# Use MiniMagick Gem for image manipulation
+gem 'mini_magick'
+# Use CarrierWave Gem for file uploading
+gem "carrierwave"
 # Use Redcarpet Gem for markdown
 gem 'redcarpet'
 # Use Pundit Gem to check authorization for user priviledges
