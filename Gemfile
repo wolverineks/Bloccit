@@ -14,6 +14,8 @@ ruby '2.2.0'
    gem 'sqlite3'
  end
 
+#Use will_paginate Gem for pagination
+gem 'will_paginate', '~> 3.0.5'
 # Use Fog Gem for markdown
 gem 'fog'
 # Use MiniMagick Gem for image manipulation
