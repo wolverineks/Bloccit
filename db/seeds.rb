@@ -11,8 +11,9 @@ require 'faker'
 # Create Topics
 15.times do 
   topic = Topic.create!(
-    name:     Faker::Lorem::sentence,
-    description: Faker::Lorem.paragraph
+    name:        Faker::Lorem::sentence,
+    description: Faker::Lorem.paragraph,
+    image:       Faker::Avatar.image
   )
 end
 topics = Topic.all
@@ -22,7 +23,8 @@ topics = Topic.all
   user = User.new(
     name:     Faker::Name.name,
     email:    Faker::Internet.email,
-    password: Faker::Lorem.characters(10)
+    password: Faker::Lorem.characters(10),
+    avatar:   Faker::Avatar.image
   )
   user.skip_confirmation!
   user.save!
@@ -32,10 +34,11 @@ users = User.all
 # Create Posts |
 50.times do 
   Post.create!(
-    user: users.sample,
+    user:  users.sample,
     title: Faker::Lorem.sentence,
     body:  Faker::Lorem.paragraph,
-    topic: topics.sample
+    topic: topics.sample,
+    image: Faker::Avatar.image
   )
 end
 posts = Post.all 
