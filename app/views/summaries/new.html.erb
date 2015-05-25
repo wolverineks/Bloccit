@@ -1,9 +1,8 @@
-<h1>New Post</h1>
-<%= params %>
-
+<h1>New Summary</h1>
+<%= @post.summary %>
 <div class="row">
   <div class="col-md-4">
-    <p>Guidelines for posts</p>
+    <p>Guidelines for summaries</p>
     <ul>
       <li>Make sure it rhymes</li>
       <li>Don't use the letter "A".</li>
@@ -12,15 +11,15 @@
   </div>
 
   <div class="col-md-8">
-    <%= form_for [@topic, @post] do |f| %>
+    <%= form_for [@topic, @post, @summary] do |f| %>
       <div class="form-group">
         <%= f.label :title %>
-        <%= f.text_field :title, class: 'form-control', placeholder: "Enter post title" %>
+        <%= f.text_field :title, class: 'form-control', placeholder: "Enter summary title" %>
       </div>
 
       <div class="form-group">
           <%= f.label :body %>
-          <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
+          <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter summary body" %>
       </div>
 
       <div class="form-group">

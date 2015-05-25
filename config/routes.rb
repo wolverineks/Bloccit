@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 
   resources :topics do
     resources :posts, except: [:index] do
-      resources :summaries
+      resources :summaries, except: [:show]
+      get '/summary' => "summaries#show"
     end
   end
 
