@@ -12,7 +12,10 @@ ruby '2.2.0'
  end
  group :development do
    gem 'sqlite3'
+   gem 'better_errors'
+   gem 'binding_of_caller'
  end
+
 
 #Use will_paginate Gem for pagination
 gem 'will_paginate', '~> 3.0.5'
