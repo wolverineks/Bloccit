@@ -8,10 +8,6 @@ class CommentsController < ApplicationController
     
   # end
 
-  def new
-
-  end
-
   def create
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:post_id])
@@ -20,13 +16,15 @@ class CommentsController < ApplicationController
     
     @comments = @post.comments.page(params[:page]).per_page(10)
 
+    authorize @comment
+
     if @comment.save
       redirect_to topic_post_path(@topic, @post)
-
     else
       flash[:error] = "There was an error saving the comment. Please try again."
       render "posts/show"
     end
+
   end
 
   # def edit
