@@ -15,9 +15,18 @@ class CommentsController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.new
-    @comment.post = @post
-    @comment.user = current_user
+    
+    @comment = Comment.new(comment_params.merge(post: @post, user: current_user))
+    
+    @comments = @post.comments.page(params[:page]).per_page(10)
+
+    if @comment.save
+      redirect_to topic_post_path(@topic, @post)
+
+    else
+      flash[:error] = "There was an error saving the comment. Please try again."
+      render "posts/show"
+    end
   end
 
   # def edit
