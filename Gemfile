@@ -15,7 +15,7 @@ ruby '2.2.0'
    gem 'better_errors'
    gem 'binding_of_caller'
  end
-
+gem 'better_errors'
 #Use will_paginate Gem for pagination
 gem 'will_paginate', '~> 3.0.5'
 # Use Fog Gem for markdown

@@ -11,5 +11,4 @@ class TopicPolicy < ApplicationPolicy
   def update?
     create?
   end
-
 end
