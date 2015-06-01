@@ -7,15 +7,17 @@ gem 'rails', '4.2.0'
 ruby '2.2.0'
 
  group :production do
+   #Use PostGres Gem for Heroku compatibility
    gem 'pg'
    gem 'rails_12factor'
  end
  group :development do
    gem 'sqlite3'
+   #Use Better Errors Gem to help with debugging
    gem 'better_errors'
    gem 'binding_of_caller'
  end
-gem 'better_errors'
+
 #Use will_paginate Gem for pagination
 gem 'will_paginate', '~> 3.0.5'
 # Use Fog Gem for markdown
@@ -71,6 +73,9 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '~> 1.3.5'
+
+  #Use RSpec Gem to help with testing
+  gem 'rspec-rails', '~> 3.0'
 end
 
