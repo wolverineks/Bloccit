@@ -39,21 +39,25 @@ end
 users = User.all
 
 # Create Posts |
-5.times do 
+50.times do 
   tmp_file = open(Faker::Avatar.image)
   FileUtils.mv tmp_file, '/tmp/avatar.png'
 
-  Post.create!(
+  post = Post.create!(
     user:  users.sample,
     title: Faker::Lorem.sentence,
     body:  Faker::Lorem.paragraph,
     topic: topics.sample,
     image: File.open('/tmp/avatar.png') 
   )
+
+  post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
+  post.update_rank
+
 end
 posts = Post.all 
 
-5.times do 
+500.times do 
   Comment.create!(
     user: users.sample,
     post: posts.sample,
