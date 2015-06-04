@@ -9,15 +9,21 @@ describe Vote, type: :model do
       2.times { @post.votes.create(value: -1) }
     end
 
-  describe "value validation" do
-    it "only allows -1 or 1 as values" do
-      expect( @post.votes[0] == (1||-1) ).eql? true 
-      expect( @post.votes[1] == (1||-1) ).eql? true 
-      expect( @post.votes[2] == (1||-1) ).eql? true 
-      expect( @post.votes[3] == (1||-1) ).eql? true 
-      expect( @post.votes[4] == (1||-1) ).eql? true 
-    end
-  end
+    describe "value validation" do
+      
+      it "only allows -1 or 1 as values" do
+        @post.votes.each do |e|
+          expect([1, -1]).to include( e.value )
+        end 
+      end
 
+      # this test should only fail if vote validation fails
+      it "should fail for invalid values" do
+        vote = @post.votes.create(value: 2)
+        expect( vote.valid? ).to eq( false )
+      end
+
+    end
+  
   end
 end
