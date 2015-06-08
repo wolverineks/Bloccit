@@ -1,5 +1,4 @@
 <h1><%= @post.title %></h1>
-<%= @post.summary.present? %>
 <div class="row">
   <div class="col-md-8">
     <p><%= @post.body %></p>
@@ -10,7 +9,8 @@
     <% end %>
 
       <% if @summary.present? %>
-      <%= link_to "Summary",  topic_post_summary_path(@topic, @post, @summary), class: 'btn btn-success' %>
+      <%= @post.summary.body %>
+      <%= link_to "Edit Summary",  edit_topic_post_summary_path(@topic, @post, @summary), class: 'btn btn-success' %>
       <% else %>
       <%= link_to "New Summary",  new_topic_post_summary_path(@topic, @post), class: 'btn btn-success' %>
       <% end %>
