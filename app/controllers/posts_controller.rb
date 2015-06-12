@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     @comments = @post.comments.page(params[:page]).per_page(10)
     @comment.post = @post
     @comment.user = current_user
+    authorize @topic
   end
 
   def new
