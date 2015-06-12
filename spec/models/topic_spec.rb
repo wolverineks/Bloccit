@@ -31,5 +31,6 @@ describe Topic do
          expect(Topic.visible_to(user)).to eq( Topic.public )
        end
      end
+   
    end
  end
