@@ -12,10 +12,20 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, alert: exception.message
   end
 
-  protected
+  # uncomment this and the private function for less specific errors 
+  # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
+protected
  
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) << :name
   end
    
+private
+
+  # def user_not_authorized
+  #   flash[:alert] = "You are not authorized to perform this action."
+  #   redirect_to(request.referrer || root_path)
+  # end
+
 end
