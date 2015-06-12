@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :topic
 
+  scope :visible_to, -> (user) { user ? all : joins(:topic).where('topics.public' => true) }
+
   mount_uploader :image, ImageUploader
 
   default_scope { order('rank DESC') }
