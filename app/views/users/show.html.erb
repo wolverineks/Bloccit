@@ -3,7 +3,7 @@
      <div class="media">
        <% if @user.avatar? %>
          <div class="media-left">
-           <%= image_tag @user.avatar.url, class: 'media-object' %>
+           <%= image_tag @user.avatar.small.url, class: 'media-object' %>
          </div>
        <% end %>
        <div class="media-body">
