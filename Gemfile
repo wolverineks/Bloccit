@@ -67,6 +67,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
 
+  gem 'pry-rails'
+  gem 'pry-nav'
+  gem 'pry-stack_explorer'
+
   # Use Capybara Gem for more testing
   gem 'capybara'
 
