@@ -18,6 +18,7 @@ ruby '2.2.0'
    gem 'binding_of_caller'
  end
 
+gem 'newrelic_rpm'
 #Use will_paginate Gem for pagination
 gem 'will_paginate', '~> 3.0.5'
 # Use Fog Gem for markdown
@@ -66,8 +67,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-
-  gem 'newrelic_rpm'
 
   gem 'pry-rails'
   gem 'pry-nav'
