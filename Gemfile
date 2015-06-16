@@ -67,6 +67,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
 
+  gem 'newrelic_rpm'
+
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'pry-stack_explorer'
