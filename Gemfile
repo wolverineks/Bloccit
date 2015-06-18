@@ -18,8 +18,11 @@ ruby '2.2.0'
    gem 'binding_of_caller'
  end
 
+# User FactoryGirl Gem for object creation in tests
+gem 'factory_girl_rails', '~> 4.0'
+# Use NewRelic Gem for app performance analysis
 gem 'newrelic_rpm'
-#Use will_paginate Gem for pagination
+# Use will_paginate Gem for pagination
 gem 'will_paginate', '~> 3.0.5'
 # Use Fog Gem for markdown
 gem 'fog'
