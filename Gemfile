@@ -56,6 +56,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'simplecov', :require => false, :group => :test
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -81,7 +83,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring', '~> 1.3.5'
+  gem 'spring', '~> 1.3.6'
 
   #Use RSpec Gem to help with testing
   gem 'rspec-rails', '~> 3.0'
