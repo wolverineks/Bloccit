@@ -3,14 +3,14 @@
      <div class="media">
        <% if @user.avatar? %>
          <div class="media-left">
-           <%= image_tag @user.avatar.url, class: 'media-object' %>
+           <%= image_tag @user.avatar.small.url, class: 'media-object' %>
          </div>
        <% end %>
        <div class="media-body">
          <h2 class="media-heading"><%= @user.name %></h2>
          <small>
            <%= pluralize(@user.posts.count, 'post') %>,
-           <%= pluralize(@user.comments.count, 'comment') %>
+           <div class='js-comments-count'><%= pluralize(@user.comments.count, 'comment') %></div>
          </small>
        </div>
      </div>

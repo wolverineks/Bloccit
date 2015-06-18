@@ -8,6 +8,48 @@
 
 require 'faker'
  
+ # Create an admin user
+ tmp_file = open(Faker::Avatar.image)
+ FileUtils.mv tmp_file, '/tmp/avatar.png'
+
+ admin = User.new(
+   name:     'Admin User',
+   email:    'admin@example.com',
+   password: 'helloworld',
+   role:     'admin',
+   avatar:   File.open('/tmp/avatar.png') 
+
+ )
+ admin.skip_confirmation!
+ admin.save!
+ 
+ # Create a moderator
+ tmp_file = open(Faker::Avatar.image)
+ FileUtils.mv tmp_file, '/tmp/avatar.png'
+
+ moderator = User.new(
+   name:     'Moderator User',
+   email:    'moderator@example.com',
+   password: 'helloworld',
+   role:     'moderator',
+   avatar:    File.open('/tmp/avatar.png') 
+
+ )
+ moderator.skip_confirmation!
+ moderator.save!
+ 
+ # Create a member
+ tmp_file = open(Faker::Avatar.image)
+ FileUtils.mv tmp_file, '/tmp/avatar.png'
+
+ member = User.new(
+   name:     'Member User',
+   email:    'member@example.com',
+   password: 'helloworld',
+   avatar:    File.open('/tmp/avatar.png') 
+ )
+ member.skip_confirmation!
+ member.save!
  
 # Create Topics
 5.times do 
